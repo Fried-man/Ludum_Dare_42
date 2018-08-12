@@ -29,6 +29,7 @@ public class arcade : MonoBehaviour {
 	}
 
 	public void Restart () {
+		PlayerPrefs.SetInt("Level", 0);
 		PlayerPrefs.SetInt("Score", 0);
 		SceneManager.LoadScene("Arcade");
 	}
