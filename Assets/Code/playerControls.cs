@@ -12,29 +12,41 @@ public class playerControls : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown("up")) {
+		if (Input.GetKeyDown("up") || Input.GetKeyDown("w")) {
 			if (this.GetComponent<Transform>().rotation != Quaternion.Euler(0, 0, 0)) {
 				this.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
 			}else {
-				transform.Translate(0, Step, 0);
+				RaycastHit2D hit = Object_Detection(Step / 2f);
+				if (hit == false) {
+					transform.Translate(0, Step, 0);
+				}
 			}
-		}else if (Input.GetKeyDown("down")) {
+		}else if (Input.GetKeyDown("down") || Input.GetKeyDown("s")) {
 			if (this.GetComponent<Transform>().rotation != Quaternion.Euler(0, 0, 180)) {
 				this.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 180);
 			}else {
-				transform.Translate(0, Step, 0);
+				RaycastHit2D hit = Object_Detection(Step / 2f);
+				if (hit == false) {
+					transform.Translate(0, Step, 0);
+				}
 			}
-		}else if (Input.GetKeyDown("right")) {
+		}else if (Input.GetKeyDown("right") || Input.GetKeyDown("d")) {
 			if (this.GetComponent<Transform>().rotation != Quaternion.Euler(0, 0, 270)) {
 				this.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 270);
 			}else {
-				transform.Translate(0, Step, 0);
-			}
-		}else if (Input.GetKeyDown("left")) {
+				RaycastHit2D hit = Object_Detection(Step);
+				if (hit == false) {
+					transform.Translate(0, Step, 0);
+				}
+			} 
+		}else if (Input.GetKeyDown("left") || Input.GetKeyDown("a")) {
 			if (this.GetComponent<Transform>().rotation != Quaternion.Euler(0, 0, 90)) {
 				this.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 90);
 			}else {
-				transform.Translate(0, Step, 0);
+				RaycastHit2D hit = Object_Detection(Step);
+				if (hit == false) {
+					transform.Translate(0, Step, 0);
+				}
 			}
 		}
 
@@ -53,6 +65,10 @@ public class playerControls : MonoBehaviour {
 			Clone.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
 			Clone.name = "Laser";
 		}
+
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			GameObject.Find("Main Camera").GetComponent<gameMaster>().Pause();
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
@@ -60,7 +76,20 @@ public class playerControls : MonoBehaviour {
 			GameObject Death = Instantiate(Tombstone);
 			Death.transform.position = transform.position;
 			Death.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+			GameObject.Find("Main Camera").GetComponent<gameMaster>().Game_Over();
 			Destroy(this.gameObject);
+		}
+	}
+
+	RaycastHit2D Object_Detection (float Distance) {
+		if (this.GetComponent<Transform>().rotation == Quaternion.Euler(0, 0, 0)) {
+			return Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + Step), Vector2.up, Distance);
+		}else if (this.GetComponent<Transform>().rotation == Quaternion.Euler(0, 0, 90)) {
+			return Physics2D.Raycast(new Vector2(transform.position.x - Step, transform.position.y), Vector2.left, Distance);
+		}else if (this.GetComponent<Transform>().rotation == Quaternion.Euler(0, 0, 180)) {
+			return Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - Step), Vector2.down, Distance);
+		}else {
+			return Physics2D.Raycast(new Vector2(transform.position.x + Step, transform.position.y), Vector2.right, Distance);
 		}
 	}
 }

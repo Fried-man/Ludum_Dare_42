@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212922337852717202}
   - component: {fileID: 50135642970875904}
   - component: {fileID: 60697525898220816}
+  - component: {fileID: 114690846810753910}
   m_Layer: 0
   m_Name: Tombstone
   m_TagString: Untagged
@@ -102,6 +103,17 @@ PolygonCollider2D:
       - {x: -0.04004153, y: 0.03003494}
       - {x: -0.039983034, y: 0.02007858}
       - {x: -0.050170027, y: 0.020021439}
+--- !u!114 &114690846810753910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896434694782718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648e0f7fa26f05740bd7c0f4bcd8cd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212922337852717202
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299712146682368}
   - component: {fileID: 212128883142118914}
+  - component: {fileID: 114402517271565102}
   - component: {fileID: 61344504149420048}
   - component: {fileID: 50264517007406452}
   - component: {fileID: 114290931084361840}
@@ -50,7 +51,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807997600940734}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -62,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &61344504149420048
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -102,6 +103,17 @@ MonoBehaviour:
   Phases:
   - {fileID: 21300000, guid: 524919ea003043f4990010935ce2a70c, type: 3}
   - {fileID: 21300000, guid: 3e5e91324ac1e7347966b2b6fb1c139c, type: 3}
+--- !u!114 &114402517271565102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807997600940734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648e0f7fa26f05740bd7c0f4bcd8cd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212128883142118914
 SpriteRenderer:
   m_ObjectHideFlags: 1

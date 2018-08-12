@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775279191268786}
   - component: {fileID: 212634764125896028}
+  - component: {fileID: 114831909172642624}
   - component: {fileID: 114029051267315358}
   - component: {fileID: 61985227577136026}
   - component: {fileID: 50531317790819934}
@@ -103,6 +104,17 @@ MonoBehaviour:
   Distance: {x: 0, y: 0}
   Child: {fileID: 0}
   Tombstone: {fileID: 1896434694782718, guid: 720f2712d176b024abbf7a3bbf7f67da, type: 2}
+--- !u!114 &114831909172642624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512935615957524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648e0f7fa26f05740bd7c0f4bcd8cd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212634764125896028
 SpriteRenderer:
   m_ObjectHideFlags: 1

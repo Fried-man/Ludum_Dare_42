@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemy : MonoBehaviour {
 	GameObject Player;
@@ -22,7 +23,9 @@ public class enemy : MonoBehaviour {
 	}
 
 	void Update () {
-		Distance = new Vector2(Player.transform.position.x - transform.position.x, Player.transform.position.y - transform.position.y);
+		if (Player) {
+			Distance = new Vector2(Player.transform.position.x - transform.position.x, Player.transform.position.y - transform.position.y);
+		}
 	}
 
 	IEnumerator Action () {
@@ -65,8 +68,7 @@ public class enemy : MonoBehaviour {
 						yield return new WaitForSeconds(Speed);
 					}
 				}
-				RaycastHit2D hit = Object_Detection(Step);
-				if (Object_Detection(Step) == false) {
+				if (Object_Detection(Step / 2f) == false) {
 					transform.Translate(0, Step, 0);
 				}
 				yield return new WaitForSeconds(Speed);
@@ -126,6 +128,9 @@ public class enemy : MonoBehaviour {
 		GameObject Death = Instantiate(Tombstone);
 		Death.transform.position = transform.position;
 		Death.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+		if (SceneManager.GetActiveScene().name == "Arcade") {
+			GameObject.Find("Main Camera").GetComponent<arcade>().Amount--;
+		}
 		Destroy(this.gameObject);
 	}
 }
