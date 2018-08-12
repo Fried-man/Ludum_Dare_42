@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gameMaster : MonoBehaviour {
 	public GameObject Spikes;
+	public GameObject Enemy;
 
 	void Start () {
 		Vector3 Screen_Pos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0)); // Top right
@@ -64,10 +65,31 @@ public class gameMaster : MonoBehaviour {
 			}
 			Clone.GetComponent<Transform>().position = new Vector3(Screen_Pos.x - (Spikes_Width * (i + .5f)), Screen_Pos.y * -1 + Spikes_Height / 2, 0);
 		}
+
+		Enemy_Wave();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void Enemy_Wave () {
+		Vector2 Enemy_Size = new Vector2(
+			Enemy.GetComponent<SpriteRenderer>().size.x * Enemy.GetComponent<Transform>().localScale.x, 
+			Enemy.GetComponent<SpriteRenderer>().size.y * Enemy.GetComponent<Transform>().localScale.y
+		);
+		GameObject Clone = Instantiate(Enemy);
+		Clone.transform.position = new Vector3(Enemy_Size.x * 10, Enemy_Size.x * Random.Range(4, 6), 0);
+		Clone.name = "Enemy";
+		Clone = Instantiate(Enemy);
+		Clone.transform.position = new Vector3(Enemy_Size.x * -10, Enemy_Size.x * Random.Range(4, 6), 0);
+		Clone.name = "Enemy";
+		Clone = Instantiate(Enemy);
+		Clone.transform.position = new Vector3(Enemy_Size.x * Random.Range(4, 6), Enemy_Size.x * 10, 0);
+		Clone.name = "Enemy";
+		Clone = Instantiate(Enemy);
+		Clone.transform.position = new Vector3(Enemy_Size.x * Random.Range(4, 6), Enemy_Size.x * -10, 0);
+		Clone.name = "Enemy";
 	}
 }
