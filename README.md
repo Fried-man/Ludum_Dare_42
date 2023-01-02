@@ -13,16 +13,14 @@
 - Bosca Ceoil
 ## Downloads and Links
 Ludum Dare Entry: <https://ldjam.com/events/ludum-dare/42/meager>
+### Demos
+- [Windows](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Windows)
+- [MacOS](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Mac%20OS)
 
-Windows: <https://drive.google.com/open?id=1iw3ClXT5oBhATIyAZ0byI4SPiqgGBVdq>
-
-MacOS: <https://drive.google.com/open?id=145-HKQXEHUdw4g0iscr0aPozZVahEZTL>
-
-x86: <https://drive.google.com/open?id=1KeEZsK60je36q7BhFU4sHQy_siZ15h1T>
-
-x86_64: <https://drive.google.com/open?id=1GtTVMli5ZO9tfFMt-RxkodAZpHHDzxDU>
-
-x86 + x86_64 (Universal): <https://drive.google.com/open?id=1i-mXBNV9ktXzB3CvUnfKQNYXHnhQT_cj>
+Linux:
+- [x86](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Linux/x86)
+- [x86_64](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Linux/x86_64)
+- [x86 + x86_64 (Universal)](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Linux/x86%20%2B%20x86_64%20(Universal))
 ## Results
 Overall: **578**th (2.98 average from 27 ratings)
 
