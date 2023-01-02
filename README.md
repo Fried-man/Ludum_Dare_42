@@ -12,8 +12,10 @@
 - MS Paint
 - Bosca Ceoil
 ## Downloads and Links
-Ludum Dare Entry: <https://ldjam.com/events/ludum-dare/42/meager>
+- [Ludum Dare Entry](https://ldjam.com/events/ludum-dare/42/meager)
+- [MacOS App Store Page](https://apps.apple.com/us/app/meager/id1433803683?mt=12)
 ### Demos
+- [Web](https://fried-man.github.io/Ludum_Dare_42/)
 - [Windows](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Windows)
 - [MacOS](https://github.com/Fried-man/Ludum_Dare_42/tree/demo/Mac%20OS)
 
